@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<solver>
+  <!-- Domain model configuration -->
+  <solutionClass>se.ltu.kitting.model.Layout</solutionClass>
+  <entityClass>se.ltu.kitting.model.Part</entityClass>
+
+  <!-- Score configuration -->
+  <scoreDirectorFactory>
+    <easyScoreCalculatorClass>se.ltu.kitting.score.ScoreCalculator</easyScoreCalculatorClass>
+  </scoreDirectorFactory>
+
+  <!-- Global termination -->
+  <termination>
+    <minutesSpentLimit>5</minutesSpentLimit>
+    <bestScoreLimit>0hard/0soft</bestScoreLimit>
+  </termination>
+
+  <!-- Algorithms / phases -->
+
+  <customPhase>
+    <customPhaseCommandClass>se.ltu.kitting.algo.FilterSides</customPhaseCommandClass>
+  </customPhase>
+
+  <customPhase>
+    <customPhaseCommandClass>se.ltu.kitting.algo.SortSidesPhase</customPhaseCommandClass>
+  </customPhase>
+
+  <customPhase>
+    <customPhaseCommandClass>se.ltu.kitting.algo.HintInit</customPhaseCommandClass>
+  </customPhase>
+
+  <constructionHeuristic>
+    <constructionHeuristicType>FIRST_FIT_DECREASING</constructionHeuristicType>
+  </constructionHeuristic>
+
+  <localSearch>
+    <localSearchType>LATE_ACCEPTANCE</localSearchType>
+  </localSearch>
+
+</solver>

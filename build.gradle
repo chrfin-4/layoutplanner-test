@@ -1,0 +1,24 @@
+apply plugin: 'groovy'
+
+repositories {
+  jcenter()
+  mavenCentral()
+}
+
+dependencies {
+  implementation 'ch.rfin.java-util:pair:1.0.0'
+  implementation 'com.google.code.gson:gson:2.8.6'
+  implementation 'org.optaplanner:optaplanner-core:8.1.0.Final'
+  testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+  testImplementation 'org.spockframework:spock-core:2.0-M4-groovy-3.0'
+  implementation files('lib/layoutplanner.jar')
+}
+
+test {
+    useJUnitPlatform()
+}
+
+task runGen(type: JavaExec) {
+  classpath = sourceSets.main.runtimeClasspath
+  main = 'se.ltu.kitting.test.etfa21.GenerateData'
+}
