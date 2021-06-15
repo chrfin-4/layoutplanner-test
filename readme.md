@@ -9,3 +9,6 @@ main production project should only contain what is needed for solving layout
 planning problems. Any experimentation, possibly for the purpose of writing
 papers, is then done in this project to avoid cluttering up the production
 code.
+
+See the etfa21 branch for code and files related to the data presented in
+the ETFA 2021 paper describing the layout planner.
